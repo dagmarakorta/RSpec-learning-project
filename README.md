@@ -20,7 +20,6 @@
 ## 📖 Subjects covered:
 
 - CRUD
-- Devise for user creation
 - System Specs with Capybara
 - Model Specs
 - Request Specs
@@ -29,9 +28,9 @@
 - Faker
 
 ## 💎 Gems used:
-- Capybara
-- Rails-rspec
-- Faker
-- FactoryBot
+- capybara
+- rails-rspec
+- faker
+- factoryBot
 - pry-debug
-- Devise
+- devise
