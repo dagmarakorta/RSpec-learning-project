@@ -1,0 +1,12 @@
+<h1>Your list</h1>
+
+<%- if @error_message.present? -%>
+  <div class="alert alert-danger">
+    <%= @error_message %>
+  </div>
+<%- end -%>
+
+<%= simple_form_for @todolist, url: todolists_path do |t| %>
+  <%= t.input :title %>
+  <%= t.button :submit %>
+<% end %>

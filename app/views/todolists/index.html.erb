@@ -1,0 +1,9 @@
+<h1>These are all todo lists created : </h1>
+
+<ul>
+  <% @todolists.each do |todolist| %>
+    <li><%= link_to todolist.title, todolist_path(todolist) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "+ New List", new_todolist_path %>

@@ -1,0 +1,32 @@
+<h1><%= @todolist.title %></h1>
+<% if @todolist.user == current_user %>
+  <div><%= link_to "Edit", edit_todolist_path(@todolist) %></div>
+  <div><%= link_to "Delete", todolist_path(@todolist), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %></div>
+<% end %>
+<div><%= link_to "Back to lists", todolists_path %></div>
+
+
+<% if @todolist.tasks.any? %>
+  <h2>To do :</h2>
+  <ol>
+    <% @todolist.tasks.order(created_at: :desc).each do |task| %>
+      <li>
+        <%= task.done ? "[ X ]" : "[  ]" %> <%= task.description %>
+        <% if @todolist.user == current_user %>
+          <%= link_to "✔️", todolist_task_done_tasks_path(@todolist.id, task.id), data: {turbo_method: :post} %>
+          <%= link_to "🗑️", todolist_task_path(@todolist.id, task), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+
+<% if @todolist.user == current_user %>
+  <div>
+    <h3>Add a new task :</h3>
+    <%= simple_form_for([@todolist, @task]) do |f| %>
+      <%= f.input :description %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+<% end %>
