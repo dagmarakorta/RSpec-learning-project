@@ -1,4 +1,4 @@
-# RSpec training project
+# RSpec learning project
 
 ℹ️ This project's purpose was to learn and master  RSpec testing with the use of [The Complete Guide to Rails Testing](https://www.codewithjason.com/complete-guide-to-rails-testing/). This is a simple application which allows users to sign up and create and manage their todo lists. For each todo list, a user can add tasks, tasks can be marked as done or deleted. I focused solely on the back-end challenges of the project : **RSpec testing** and **better app architecture (using FormObjects)**. Front-end part is minimal and its only purpose is to display the correct information.
 
